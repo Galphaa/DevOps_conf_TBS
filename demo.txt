@@ -80,12 +80,20 @@ EOL
 docker build . 
 docker images
 docker run {ID_IMAGE}  figlet Dockerfile
-#build cache and taggind
+##build cache and taggind
 docker build -t {TAG_NAME}
 docker images 
+docker history {IMAGE_NAME}
+##container sizes and alpine
+docker pull nginx 
+docker pul  nginx:alpine 
 
-
+docker container run --rm --name my_rick_roll -p 8080:8080 modem7/docker-rickroll:latest
 docker container run --rm --name my_nginx -p 8080:80 nginx
 docker container attach my_nginx
 
 
+#what next?
+compose
+kubernetes
+managed services 
