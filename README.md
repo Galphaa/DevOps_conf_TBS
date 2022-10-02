@@ -1,1 +1,1 @@
-# DevOps_conf_TBS
+# Docker 101 Workshop notes
