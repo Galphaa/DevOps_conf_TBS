@@ -88,10 +88,36 @@ docker history {IMAGE_NAME}
 docker pull nginx 
 docker pul  nginx:alpine 
 
-docker container run --rm --name my_rick_roll -p 8080:8080 modem7/docker-rickroll:latest
-docker container run --rm --name my_nginx -p 8080:80 nginx
-docker container attach my_nginx
+docker  run --rm --name my_rick_roll -p 8080:8080 modem7/docker-rickroll:latest
+docker  run --rm --name my_nginx -p 8080:80 nginx
+docker exec -it my_nginx  bash
 
+
+cat <<EOL > /usr/share/nginx/html/index.htnl
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to DevOps con Tbilisi!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to DevOps con Tbilisi!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+EOL
 
 #what next?
 compose
